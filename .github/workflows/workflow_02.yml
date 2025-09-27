@@ -5,6 +5,8 @@ jobs:
   first-job:
     runs-on: ubuntu-latest
     steps: 
+      - name: sleep for 15 sec
+        run: sleep 15
       - name: print hello
         run: echo 'hello'
   second-job:
