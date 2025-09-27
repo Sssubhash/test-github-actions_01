@@ -1,0 +1,16 @@
+#workflow is an entire automation process defined in .yml
+
+name: Manual Trigger Workflow #name of the workflow
+
+on:
+  workflow_dispatch:  # Enables manual trigger from GitHub UI
+
+#job is like a unit of work inside a workflow
+#a job contains sequence of steps to execute
+
+jobs: 
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print greeting
+        run: echo "Hello from your manually triggered workflow!"
