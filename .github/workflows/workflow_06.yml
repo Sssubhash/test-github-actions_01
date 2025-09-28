@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print time
-        run: echo 'Current time $(date)'
+        run: echo "Current time $(date)"
