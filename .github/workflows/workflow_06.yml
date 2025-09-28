@@ -1,7 +1,7 @@
 name: schedule workflow
 on:
   schedule:
-    - cron: '11 19 * * *' 
+    - cron: '13 19 * * *' 
   workflow_dispatch:
 jobs:
   schedule-job:
