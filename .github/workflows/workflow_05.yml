@@ -1,0 +1,14 @@
+name: run python script on push
+on: [push, workflow_dispatch]
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get the code
+        uses: actions/checkout@v4 #check out current repo where the workflow is defined
+      - name: install python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+      - name: run the script
+        run: python hello.py
