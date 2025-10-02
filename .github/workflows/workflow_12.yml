@@ -1,0 +1,29 @@
+name: env variables
+on:
+  workflow_dispatch:
+env:
+  WORKFLOW_NAME: "env variables"
+jobs:
+  first-job:
+    env:
+      JOB_NAME: "first-job"
+      SEQUENCE: 1
+    runs-on: ubuntu-latest
+    steps:
+      - name: env variables
+        run: echo "Work Flow: ${{env.WORKFLOW_NAME}} Job:  ${{env.JOB_NAME}}"
+  second-job:
+    env:
+      JOB_NAME: "second-job"
+    runs-on: ubuntu-latest
+    steps:
+      - name: get the code
+        uses: actions/checkout@v3
+      - name: install python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.9'
+      - name: run the code
+        run: python test.py
+      
+    
