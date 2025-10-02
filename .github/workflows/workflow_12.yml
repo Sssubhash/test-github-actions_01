@@ -24,6 +24,6 @@ jobs:
         with:
           python-version: '3.9'
       - name: run the code
-        run: python test.py
+        run: python hello.py
       
     
