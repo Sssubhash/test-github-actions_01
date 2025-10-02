@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: env variables
-        run: echo "Work Flow: ${{env.WORKFLOW_NAME}} Job:  ${{env.JOB_NAME}}"
+        run: echo "Work Flow -  ${{WORKFLOW_NAME}} Job Name - ${{JOB_NAME}}"
   second-job:
     env:
       JOB_NAME: "second-job"
@@ -20,7 +20,7 @@ jobs:
       - name: get the code
         uses: actions/checkout@v3
       - name: install python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v5
         with:
           python-version: '3.9'
       - name: run the code
