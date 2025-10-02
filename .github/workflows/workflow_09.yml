@@ -1,0 +1,14 @@
+name: job outputs
+on:
+  workflow_dispatch:
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: create a file
+        run: touch test.txt
+      - name: upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: files
+          path: test.txt

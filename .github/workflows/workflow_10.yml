@@ -1,0 +1,26 @@
+name: one job output to another job
+on:
+  workflow_dispatch
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: create a file
+        run: echo "hello world" > test.txt
+      - name: upload file
+        uses: actions/upload-artifact@v4
+        with: 
+          name: files
+          path: test.txt
+  second-job:
+    runs-on: ubuntu-latest
+    needs: first-job
+    steps:
+      - name: download file
+        uses: actions/download-artifact@v4
+        with:
+          name: files
+      - name: display contents
+        run: cat test.txt
+      
+  
