@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: env variables
-        run: echo "Work Flow -  ${{WORKFLOW_NAME}} Job Name - ${{JOB_NAME}}"
+        run: echo "Work Flow -  ${{env.WORKFLOW_NAME}} Job Name - ${{env.JOB_NAME}}"
   second-job:
     env:
       JOB_NAME: "second-job"
