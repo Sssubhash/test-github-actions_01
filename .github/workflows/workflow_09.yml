@@ -7,3 +7,8 @@ jobs:
     steps:
       - name: create a file
         run: touch test.txt
+      - name: upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: files
+          path: test.txt
