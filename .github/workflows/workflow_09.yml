@@ -1,0 +1,9 @@
+name: job outputs
+on:
+  workflow_dispatch:
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: create a file
+        run: touch test.txt
