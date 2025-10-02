@@ -1,0 +1,11 @@
+name: event types demo
+on:
+  pull_request:
+    types:
+      - opened
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print message
+        run: echo "a pull request was made"

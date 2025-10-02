@@ -1,0 +1,11 @@
+name: schedule workflow
+on:
+  schedule:
+  - cron: '50 13 * * *' 
+  workflow_dispatch:
+jobs:
+  schedule-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print time
+        run: echo "Current time $(date)"
