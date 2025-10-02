@@ -1,0 +1,11 @@
+name: events filters demo
+on:
+  push:
+    branches:
+      - test
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print message
+        run: echo "pushed to branch test"
