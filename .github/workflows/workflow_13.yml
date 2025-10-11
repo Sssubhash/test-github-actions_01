@@ -10,6 +10,6 @@ jobs:
         run: |
              #you can't print a secret using echo
              echo "secret - ${{secrets.password}}"
-             echo "secret from env - ${{env.PASSWORD}}" > test.txt
+             echo "secret from env - $PASSWORD" > test.txt
              cat test.txt
              
