@@ -9,5 +9,5 @@ jobs:
       - name: print secrets
         run: |
              echo "secret - ${{secrets.password}}"
-             echo "secret from env - {{secrets.password}}"
+             echo "secret from env - ${{env.PASSWORD}}"
              
