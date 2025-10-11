@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: print secrets
         run: |
+             #you can't print a secret using echo
              echo "secret - ${{secrets.password}}"
-             echo "secret from env - ${{env.PASSWORD}}"
+             echo "secret from env - ${{env.PASSWORD}}" > test.txt
+             echo "cat test.txt"
              
