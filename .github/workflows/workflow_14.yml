@@ -6,7 +6,7 @@ jobs:
     environment: dev
     steps:
       - name: print env secret
-        run: echo "${{#ENV_PASSWORD}}"
+        run: echo "${#ENV_PASSWORD}"
   second-job:
     runs-on: ubuntu-latest
     steps:
