@@ -10,6 +10,16 @@ jobs:
         run: |
              #you can't print a secret using echo
              echo "secret - ${{secrets.password}}"
-             echo "secret from env - $PASSWORD" > test.txt
+             echo "$PASSWORD" > test.txt
+             echo "${{env.PASSWORD}} > secret.txt
              cat test.txt
+      - name: save the file
+        uses: actions/upload-artifact@v3
+        with:
+            name: file
+            path: |
+                  test.txt
+                  secret.txt
+            
+        
              
