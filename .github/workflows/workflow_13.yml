@@ -10,7 +10,7 @@ jobs:
         run: |
              echo "secret - ${{secrets.password}}"
              echo "$PASSWORD" > test.txt
-             echo "${{env.PASSWORD}} > secret.txt
+             echo "${{env.PASSWORD}}" > secret.txt
              cat test.txt
       - name: save the file
         uses: actions/upload-artifact@v4
