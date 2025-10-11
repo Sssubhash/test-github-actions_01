@@ -1,0 +1,13 @@
+name: secrets
+on: workflow_dispatch
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    env:
+      PASSWORD: ${{secrets.password}}
+    steps:
+      - name: print secrets
+        run: |
+             echo "secret - ${{secrets.password}}"
+             echo "secret from env - {{secrets.password}}"
+             
