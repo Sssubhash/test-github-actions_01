@@ -3,7 +3,6 @@ on: workflow_dispatch
 jobs:
   first-job:
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
       - name: raise error
         continue-on-error: true
