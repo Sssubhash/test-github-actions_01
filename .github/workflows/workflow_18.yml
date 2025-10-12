@@ -1,0 +1,16 @@
+name: matrix
+on: workflow_dispatch
+jobs:
+  first-job:
+    strategy: 
+      matrix:
+        operating-system: [ubuntu-latest, windows-latest]
+    runs-on: ${{matix.operating-system}}
+    steps:
+      - name: print os
+        run: echo "os - ${{matrix.operating-system}}"
+      - name: print ip
+        run: curl ifconfig.me
+      
+      
+    
