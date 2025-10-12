@@ -1,0 +1,22 @@
+name: service containers
+on: workflow_dispatch
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    services:
+      mariadb:
+        image: mariadb:11.4
+        ports: 
+          - 3306:3306
+        env:
+          MARIADB_USER: root
+          MARIADB_ROOT_PASSWORD: root
+          MARIADB_DATABASE: testdb
+        options: >-
+          --health-cmd="mysql ping -h mariadb -uroot -proot"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+    steps:
+      - name: connect to mariadb
+        run: mysql -h mariadb -uroot -proot -e "SHOW DATABASES;"
