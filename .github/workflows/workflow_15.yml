@@ -1,0 +1,21 @@
+name: test workflow
+on: workflow_dispatch
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: raise error
+        run: exit 1
+      - name: next step after error
+        run: "step after error in first-job"
+  second-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print
+        run: echo "hi from second-job"
+  third-job:
+    runs-on: ubuntu-latest
+    needs: first-job
+    steps:
+      - name: print
+        run: echo "hello from third-job (needs first-job)"
