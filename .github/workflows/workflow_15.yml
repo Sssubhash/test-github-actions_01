@@ -14,7 +14,7 @@ jobs:
       - name: next step after error
         if: failure()  #if no failure(), this step will not run as previous step is failed
         #failure() return true if any one of previous step is failed.
-        run: "step after error in first-job"
+        run: echo "step after error in first-job"
   second-job:
     runs-on: ubuntu-latest
     steps:
