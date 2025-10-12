@@ -1,0 +1,14 @@
+name: containers - existing image
+on: workflow_dispatch
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    container:
+      image: nginx:latest
+    steps: #runs steps inside nginx, ubuntu-latest is the VM to run containers
+      - name: print nginx version
+        run: nginx -v 
+      - name: print nginx.conf
+        run: cat /etc/nginx/nginx.conf
+    
+  
