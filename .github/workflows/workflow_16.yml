@@ -1,11 +1,12 @@
-name: continue on error
+name: continue on error - for steps
 on: workflow_dispatch
 jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
       - name: raise error
-        continue-on-error: true
+        continue-on-error: true 
+        #will mark the job as green, so dependent jobs will run fine 
         run: exit 1
       - name: print
         run: echo "hello from first job step 2"
