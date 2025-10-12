@@ -1,3 +1,6 @@
+#container wil ru inside ubuntu vm, steps inside ubuntu vm, container inside ubuntu vm
+
+
 name: service containers
 on: workflow_dispatch
 jobs:
@@ -14,7 +17,7 @@ jobs:
           MARIADB_DATABASE: testdb
         options: >-
           --health-cmd="mysql ping -h mariadb -uroot -proot"
-          --health-interval=10s
+          --health-interval=30s
           --health-timeout=5s
           --health-retries=5
     steps:
