@@ -1,4 +1,9 @@
-name: test workflow
+#normally jobs runs in parallel
+#if "needs" is present the jobs will run one after another
+#if parent job fails, child job will not run, but parallel jobs run without any issues
+
+
+name: if failure() workflow
 on: workflow_dispatch
 jobs:
   first-job:
@@ -7,6 +12,8 @@ jobs:
       - name: raise error
         run: exit 1
       - name: next step after error
+        if: failure()  #if no failure(), this step will not run as previous step is failed
+        #failure() return true if any one of previous step is failed.
         run: "step after error in first-job"
   second-job:
     runs-on: ubuntu-latest
