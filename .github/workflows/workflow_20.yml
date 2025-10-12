@@ -18,8 +18,8 @@ jobs:
         options: >-
           --health-cmd="mysql ping -h mariadb -uroot -proot"
           --health-interval=30s
-          --health-timeout=5s
-          --health-retries=5
+          --health-timeout=20s
+          --health-retries=7
     steps:
       - name: connect to mariadb
         run: mysql -h mariadb -uroot -proot -e "SHOW DATABASES;"
