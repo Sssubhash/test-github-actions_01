@@ -4,6 +4,7 @@ jobs:
   first-job:
     runs-on: ubuntu-latest
     continue-on-error: true
+    #will not be marked as green
     steps:
       - name: raise error
         run: exit 1
