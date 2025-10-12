@@ -16,7 +16,7 @@ jobs:
           MARIADB_ROOT_PASSWORD: root
           MARIADB_DATABASE: testdb
         options: >-
-          --health-cmd="mysqladmin ping -h localhost -uroot -proot"
+          --health-cmd="mysqladmin ping -h localhost -u root -proot"
           --health-interval=30s
           --health-timeout=20s
           --health-retries=7
