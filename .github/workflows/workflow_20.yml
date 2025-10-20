@@ -16,6 +16,8 @@ jobs:
           MARIADB_ROOT_PASSWORD: root
           MARIADB_DATABASE: testdb
     steps:
+      - name: sleep
+        run: sleep 50
       - name: connect to mariadb
-        run: mysql -h 127.0.0.1 -uroot -proot -e "SHOW DATABASES;"
+        run: mysql -h localhost -uroot -proot -e "SHOW DATABASES;"
 
