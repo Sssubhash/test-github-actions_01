@@ -15,7 +15,7 @@ jobs:
           MARIADB_USER: root
           MARIADB_ROOT_PASSWORD: root
           MARIADB_DATABASE: testdb
-    steps:
-      - name: print
-        run: echo 'hello'
+   steps:
+      - name: connect to mariadb
+        run: mysql -h mariadb -uroot -proot -e "SHOW DATABASES;"
 
