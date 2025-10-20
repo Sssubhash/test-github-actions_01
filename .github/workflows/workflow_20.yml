@@ -1,4 +1,4 @@
-#container wil ru inside ubuntu vm, steps inside ubuntu vm, container inside ubuntu vm
+#container will run inside ubuntu vm, steps inside ubuntu vm
 
 
 name: service containers
@@ -16,10 +16,10 @@ jobs:
           MARIADB_ROOT_PASSWORD: root
           MARIADB_DATABASE: testdb
         options: >-
-          --health-cmd="mysqladmin ping -h localhost -u root -proot"
+          --health-cmd="mysql -h localhost -u root -proot -e 'SELECT 1;'"
           --health-interval=30s
           --health-timeout=20s
-          --health-retries=7
+          --health-retries=3
     steps:
       - name: connect to mariadb
         run: mysql -h mariadb -uroot -proot -e "SHOW DATABASES;"
