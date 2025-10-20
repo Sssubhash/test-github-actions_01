@@ -19,5 +19,5 @@ jobs:
       - name: sleep
         run: sleep 50
       - name: connect to mariadb
-        run: mysql -h localhost -uroot -proot -e "SHOW DATABASES;"
+        run: mysql -h localhost -u root -proot -e "SHOW DATABASES;"
 
