@@ -17,5 +17,5 @@ jobs:
           MARIADB_DATABASE: testdb
     steps:
       - name: connect to mariadb
-        run: mysql -h mariadb -uroot -proot -e "SHOW DATABASES;"
+        run: mysql -h 127.0.0.1 -uroot -proot -e "SHOW DATABASES;"
 
