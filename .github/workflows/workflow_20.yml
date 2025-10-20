@@ -15,11 +15,4 @@ jobs:
           MARIADB_USER: root
           MARIADB_ROOT_PASSWORD: root
           MARIADB_DATABASE: testdb
-        options: >-
-          --health-cmd="mysql -h localhost -u root -proot -e 'SELECT 1;'"
-          --health-interval=30s
-          --health-timeout=20s
-          --health-retries=3
-    steps:
-      - name: connect to mariadb
-        run: mysql -h mariadb -uroot -proot -e "SHOW DATABASES;"
+
