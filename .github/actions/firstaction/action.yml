@@ -1,0 +1,8 @@
+name: first action
+description: demonstrate composite actions
+runs:
+  using: 'composite'
+  steps:
+    - name: print hello from action
+      run: echo "hello from action"
+      shell: bash
