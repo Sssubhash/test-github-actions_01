@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: get the repo code
         uses: actions/checkout@v4
+      - name: Modify a file
+        run: echo "Updated at $(date)" >> test.txt
       - name: add changes to repo
         run: |
           git config user.name "github-actions"
