@@ -9,4 +9,7 @@ jobs:
       - name: get the repo code
         uses: actions/checkout@v4
       - name: add changes to repo
-        run: git add .
+        run: |
+          git add .
+          git commit -m "a commit"
+          git push
