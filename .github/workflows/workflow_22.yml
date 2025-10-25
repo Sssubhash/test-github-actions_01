@@ -1,0 +1,12 @@
+name: permissions demo
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get the repo code
+        uses: actions/checkout@v4
+      - name: add changes to repo
+        run: git add .
